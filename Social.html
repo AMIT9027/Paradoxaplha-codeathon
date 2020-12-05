@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="content-section">
+    <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Social Media survey pages</legend>
+            <div class="form-group">
+                {{ form.Firstname.label(class="form-control-label") }}
+                {% if form.Firstname.errors %}
+                    {{ form.Firstname(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.Firstname.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.Firstname(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+                <div class="form-group">
+                    {{ form.Lastname.label(class="form-control-label") }}
+                    {% if form.Lastname.errors %}
+                        {{ form.Lastname(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.Lastname.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.Lastname(class="form-control form-control-lg") }}
+                    {% endif %}
+                    </div>
+
+                    <div class="form-group">
+                        {{ form.Address.label(class="form-control-label") }}
+                        {% if form.Address.errors %}
+                            {{ form.Address(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.Address.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ form.Address(class="form-control form-control-lg") }}
+                        {% endif %}
+                    </div>
+                    <div class="form-group">
+                        {{ form.Socia.label(class="form-control-label") }}
+                        {% if form.Socia.errors %}
+                            {{ form.Socia(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.Socia.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ form.Socia(class="form-control form-control-lg") }}
+                        {% endif %}
+                    </div>
+                  
+                
+                </fieldset>
+                <div class="form-group">
+                    {{ form.submit(class="btn btn-outline-info") }}
+                </div>
+            
+                </form>
+               
+
+    
+                <div class="border-top pt-3">
+                    <small class="text-muted">
+                        FOR PHOTO <a class="ml-2" href="{{ url_for('AMITS') }}">CAMERA</a>
+                    </small>
+                </div>
+</div>
+{% endblock content %}
